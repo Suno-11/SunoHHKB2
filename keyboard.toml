@@ -39,29 +39,29 @@ LShift             Z        X        C        V        B        N        M      
 name = "Fn_layer"
 keys = """
 _        F1        F2       F3       F4       F5       F6       F7       F8       F9       F10       F11       F12       Insert    Delete
-_        _        _       _       _       _       _       PageUp   Insert   _     PrintScreen UP        _        _ 
-CapsLock AudioVolDown AudioVolUp AudioMute  _ _      Home     PageDown _       _       Left      Right               _ 
-_                 User0     User1    User2    _       _       End      _       _       _        Down      _        _ 
+_        No        No       No       No       No       No       PageUp   Insert   No     PrintScreen UP        No        No
+CapsLock AudioVolDown AudioVolUp AudioMute  No No      Home     PageDown No       No       Left      Right               _ 
+_                 User0     User1    User2    No       No       End      No       No       No        Down      _        _ 
          LGui      LAlt                               Space                                          MO(3)     TG(2)     RCtrl
 """
 
 [[layer]]
 name = "Number_layer"
 keys = """
-_        _        _       _       _       _       _       _     KpAsterisk Kc9      Kc0       KpMinus   KpPlus    _       Backspace
-_ 	     _        _       _       _       _       Kp7      Kp8      Kp9      _       _        UP        _        KpSlash 
-CapsLock _        NumLock  _       _       _       Kp4      Kp5      Kp6      _       Left      Right               KpEnter
-_                  _       _     Calculator _       _       Kp1      Kp2      Kp3      _        Down      RShift    MO(1) 
+_        _        _       _       _       _       _       _     KpAsterisk Kc9      Kc0       KpMinus   KpPlus    No       Backspace
+_ 	     No        No       No       No       No       Kp7      Kp8      Kp9      No       No        UP        No        KpSlash 
+CapsLock No        NumLock  No       No       No       Kp4      Kp5      Kp6      No       Left      Right               KpEnter
+_                  No       No     Calculator No       No       Kp1      Kp2      Kp3      No        Down      RShift    MO(1) 
          LGui      LAlt                                Kp0                                           KpDot     _        No 
 """
 
 [[layer]]
 name = "Mouse_layer"
 keys = """
-_    MouseAccel0 MouseAccel1 MouseAccel2 _   _       _       _       _       _       _        _        _        _        Delete
-_ MouseWheelUp     _       _       _       _       _       _       _       _    MouseBtn1  MouseUp  MouseBtn2    _ 
-CapsLock MouseWheelLeft MouseWheelRight _ _ _       _       _       _       _      MouseLeft  MouseRight          _ 
-_            MouseWheelDown _       _       _       _       _       _       _       _      MouseDown  RShift     MO(1) 
+_    MouseAccel0 MouseAccel1 MouseAccel2  No   No       No       No       No       No       No        No        No        No        Delete
+_    No      MouseWheelUp       No       No       No       No       No       No       No    MouseBtn1  MouseUp  MouseBtn2    _ 
+CapsLock MouseWheelLeft MouseWheelRight No No No       No       No       No       No      MouseLeft  MouseRight          _ 
+_            MouseWheelDown No       No       No       No       No       No       No      No      MouseDown  RShift     MO(1) 
          LGui      LAlt                                Space                                         MO(3)     TG(2)     RCtrl
 """
 
