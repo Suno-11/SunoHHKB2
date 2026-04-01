@@ -1,35 +1,73 @@
-# Documentation: https://rmk.rs/docs/configuration.html
 [keyboard]
-name = "RMK Keyboard"
-product_name = "RMK Keyboard"
-vendor_id = 0x4c4b
-product_id = 0x4643
+name = "SunoHHKB2"
+product_name = "SunoHHKB2"
+vendor_id = 0x1209
+product_id = 0x2302
 manufacturer = "RMK"
-chip = "rp2040"
+chip = "nrf52840"
 
 [matrix]
-# Row and col pins are mandatory
-row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-col_pins = ["PIN_19", "PIN_20", "PIN_21"]
-
-# RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
-# row2col = true
+# Input and output pins are mandatory
+input_pins = ["P1_02", "P1_07", "P0_31", "P0_29","P0_02"]
+output_pins = ["P1_06","P1_04","P0_11","P1_00","P0_24","P0_22","P0_20","P1_11","P1_13","P1_15","P0_17","P0_08","P0_06","P0_09","P0_10"]
+# WARNING: Currently row2col/col2row is set in RMK's feature gate, configs here do nothing actually
+row2col = false
 
 [layout]
-rows = 4
-cols = 3
-layers = 2
+rows = 5
+cols = 15
+layers = 4
 keymap = [
     [
-        ["A", "B", "C"],
-        ["Kc1", "Kc2", "Kc3"],
-        ["LCtrl", "MO(1)", "LShift"],
-        ["OSL(1)", "LT(2, Kc9)", "LM(1, LShift | LGui)"]
+        ["Escape", "Kc1", "Kc2", "Kc3", "Kc4", "Kc5", "Kc6", "Kc7", "Kc8", "Kc9", "Kc0", "Minus", "Equal", "Grave", "Backspace"],
+        ["LT(2, Tab)", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "LeftBracket", "RightBracket", "Backslash", "_"],
+        ["LCtrl", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Semicolon", "Quote", "_", "Enter", "_"],
+        ["LShift", "_", "Z", "X", "C", "V", "B", "N", "M", "Comma", "Dot", "Slash", "RShift", "MO(1)", "_"],
+        ["_", "LGui", "LAlt", "_", "_", "_", "Space", "_", "_", "_", "_", "MO(3)", "TG(2)", "RCtrl", "_"]
     ],
     [
-        ["_", "TT(1)", "TG(2)"],
-        ["_", "_", "_"],
-        ["_", "_", "_"],
-        ["_", "_", "_"]
+        ["_", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "Insert", "Delete"],
+        ["_", "No", "No", "No", "No", "No", "No", "PageUp", "Insert", "No", "PrintScreen", "UP", "No", "No", "_"],
+        ["CapsLock", "AudioVolDown", "AudioVolUp", "AudioMute", "No", "No", "Home", "PageDown", "No", "No", "Left", "Right", "_", "No", "_"],
+        ["No", "_", "User0", "User1", "User2", "No", "No", "End", "No", "No", "No",  "Down", "No", "No", "_"],
+        ["_", "LGui", "LAlt", "_", "_", "_", "Space", "_", "_", "_", "_", "MO(3)", "TG(2)", "RCtrl", "_"]
+    ],
+    [
+        ["_", "No", "No", "No", "No", "No", "No", "No", "KpAsterisk", "Kc9", "Kc0", "KpMinus", "KpPlus", "_", "Backspace"],
+        ["_", "No", "No", "No", "No", "No", "Kp7", "Kp8", "Kp9", "No", "No", "UP", "No", "KpSlash", "_"],
+        ["CapsLock", "No", "NumLock", "No", "No", "No", "Kp4", "Kp5", "Kp6", "No", "Left", "Right", "_", "KpEnter", "_"],
+        ["No", "No", "No", "No", "Calculator", "No", "No", "Kp1", "Kp2", "Kp3", "No",  "Down", "RShift", "MO(1)", "_"],
+        ["_", "LGui", "LAlt", "_", "_", "_", "Kp0", "_", "_", "_", "_", "KpDot", "No", "No", "_"]
+    ],
+    [
+        ["_", "MouseAccel0", "MouseAccel1", "MouseAccel2", "No", "No", "No", "No", "No", "No", "No", "No", "No", "_", "Delete"],
+        ["_", "No", "MouseWheelUp", "No", "No", "No", "No", "No", "No", "No", "MouseBtn1", "MouseUp", "MouseBtn2", "No", "_"],
+        ["CapsLock", "MouseWheelLeft", "MouseWheelRight", "No", "No", "No", "No", "No", "No", "No", "MouseLeft", "MouseRight", "_", "No", "_"],
+        ["_", "No", "MouseWheelDown", "No", "No", "No", "No", "No", "No", "No", "No", "MouseDown", "RShift", "MO(1)", "_"],
+        ["_", "LGui", "LAlt", "_", "_", "_", "Space", "_", "_", "_", "_", "_", "_", "_", "_"]
     ],
 ]
+
+
+[light]
+capslock = { pin = "P1_01", low_active = false }
+#scrolllock = { pin = "PIN_1", low_active = true }
+#$numslock= { pin = "PIN_2", low_active = true }
+
+[storage]
+# Storage feature is enabled by default
+# enabled = false
+
+[ble]
+enabled = true
+# vddh has an internal voltage divider
+battery_adc_pin = "vddh"
+# Or
+# battery_adc_pin = "P0_04"
+# adc_divider_measured = 2000
+# adc_divider_total = 2806
+
+charge_state.pin = "P0_25"
+charge_state.low_active = false
+charge_led.pin = "P0_15"
+charge_led.low_active = true
